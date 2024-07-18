@@ -2,9 +2,9 @@ from time import sleep
 from datetime import datetime, timedelta
 
 taxa_condominial = 255  # Taxa cobrada aos proprietários do condomínio
-juros = 0.0033 * 255  # Juros de 0,33% ao dia
 taxa_com_multa = taxa_condominial + (taxa_condominial * 0.02)  # Multa de 2%
-data1 = datetime.now()  # data de agora DD/MM/AAAA HORAS/MINUTOS/SSEGUNDOS
+juros = 0.0033 * taxa_com_multa  # Juros de 0,33% ao dia
+data1 = datetime.now()  # data de agora DD/MM/AAAA HORAS/MINUTOS/SEGUNDOS
 data1.strftime("%d/%m/%Y")  # Formatação da data
 total = 0  # Valor total das taxas condominiais inadimplentes
 cobrancas = int(input("Quantos cobranças existem?"))
